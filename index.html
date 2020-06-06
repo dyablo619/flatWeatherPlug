@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Weather Plugin Example</title>
+
+	<!-- include flatWeatherPlugin.css -->
+	<link href="css/flatWeatherPlugin.css" rel="stylesheet" type="text/css">
+	<!-- include a copy of jquery (if you haven't already) -->
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<!-- include flatWeatherPlugin.js -->
+	<script src="js/jquery.flatWeatherPlugin.js"></script>
+
+	<script type="text/javascript">
+		function startWeather() {
+			$(document).ready(function () {
+
+				//Setup the plugin, see readme for more examples
+				var example = $("#example").flatWeatherPlugin({
+					location: "",
+					locLat: "41.972572",
+					locLon: "-87.676296",
+					country: "",
+					forecast: 3,
+					apikey: "2308e1bb08db766d6bcca0296e5f35b6",
+					api: "openweathermap",
+					displayCityNameOnly: false,
+					view: "full",
+					render: true,
+				});
+			});
+		}
+	</script>
+	<script>
+		function startPage() {
+			startWeather();
+		}
+	</script>
+</head>
+
+<body onload="startPage(); setInterval('startPage()', 1000 )">
+
+	<div style="position:absolute; margin-top:0px;" id="example"></div>
+
+</body>
+
+</html>
